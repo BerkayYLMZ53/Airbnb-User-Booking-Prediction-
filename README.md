@@ -1,34 +1,63 @@
-# 🗺️ Airbnb User Booking Prediction (Term Project)
+# Airbnb User Booking Prediction
 
-This project was developed to predict which country new Airbnb users will make their first booking in by analyzing their demographic data, location preferences, and session activity. It is an end-to-end machine learning study based on a multi-class classification problem.
+A multi-class classification project that explores whether a new Airbnb user's first booking destination can be predicted from demographic information, location preferences, and session activity.
 
-## 🎯 Project Objective
-To predict users' travel destinations beforehand in order to personalize the user experience, highlight popular content related to the respective destination, and direct marketing budgets toward the appropriate target audience.
+## Project objective
 
-## 📊 Dataset Structure and Preprocessing
-The dataset used in this project includes user profile information and in-app interactions. The following steps were implemented during the data preprocessing phase:
-* **Missing Value Management:** Missing and incomplete data in the dataset were analyzed and either cleaned or imputed using appropriate methods.
-* **Categorical Variable Transformation:** Categorical metrics were prepared for the models using `LabelEncoder` and `One-Hot Encoding` methods.
-* **Feature Scaling:** `StandardScaler` was applied to balance the impact of continuous variables on the models.
+The project investigates how user profile and interaction data can be used to estimate the destination country of a first booking. Potential applications include personalizing recommendations and understanding user preferences.
 
-## 🛠️ Technologies and Models Used
-The project utilizes the Python programming language along with libraries from its data science ecosystem, including `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`, and `Scikit-Learn`.
+## Data preparation
 
-Three different algorithms were evaluated and compared to find a suitable approach:
-1. **Logistic Regression:** To measure baseline linear classification performance.
-2. **Random Forest Classifier:** To observe ensemble learning performance.
-3. **Gradient Boosting Classifier:** To optimize weak learners using gradient boosting to achieve higher accuracy.
+The workflow described in this project includes:
 
-## 📈 Hyperparameter Optimization and Results
-To improve model performance, hyperparameter combinations were selected using **`RandomizedSearchCV`** and **`GridSearchCV`**.
+- Reviewing missing and incomplete values and applying cleaning or imputation.
+- Encoding categorical features with Label Encoding and One-Hot Encoding.
+- Scaling continuous features with `StandardScaler`.
+- Preparing the data for multi-class model training.
 
-* **Best Performing Model:** `Gradient Boosting Classifier`
-* **Evaluation:** Model performance was evaluated using accuracy, precision, recall, and F1-score metrics, which are critical for multi-class classification problems.
-* **Visualization:** A detailed **Confusion Matrix** heatmap (`sns.heatmap`) was generated to analyze where the optimized model made correct and incorrect predictions across different countries.
+## Models compared
 
-## 🚀 Running the Project Locally
+Three classification algorithms are evaluated:
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/BerkayYLMZ5353/airbnb-booking-prediction.git
-   ```
+1. **Logistic Regression** — a baseline linear classifier.
+2. **Random Forest Classifier** — an ensemble of decision trees.
+3. **Gradient Boosting Classifier** — a boosting-based ensemble method.
+
+## Evaluation approach
+
+The project uses classification metrics such as accuracy, precision, recall, and F1-score. A confusion-matrix heatmap is also used to inspect class-level prediction patterns.
+
+Hyperparameter search is explored with `RandomizedSearchCV` and `GridSearchCV`. The current project notes Gradient Boosting Classifier as the best-performing model in the experiment. Consult the notebook outputs for the exact metric values; no numeric score is stated here without a verified result.
+
+## Technologies
+
+- Python
+- Pandas and NumPy
+- Matplotlib and Seaborn
+- Scikit-learn
+- Jupyter Notebook
+
+## Run locally
+
+Clone this repository:
+
+```bash
+git clone https://github.com/BerkayYLMZ53/Airbnb-User-Booking-Prediction-.git
+cd Airbnb-User-Booking-Prediction-
+```
+
+Install the main dependencies:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+```
+
+Launch Jupyter:
+
+```bash
+jupyter notebook
+```
+
+## Notes
+
+This is an educational prediction exercise using a historical dataset. Model results may not generalize to current Airbnb users or real booking behaviour.
